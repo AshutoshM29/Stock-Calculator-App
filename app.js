@@ -41,6 +41,7 @@ function calculateProfitAndLoss(initial, quantity, current) {
         showOutput(`No profit, No Loss ⚖️`);
         outputDiv.style.color = "white";
     }
+
 }
     function showOutput(message) {
         outputDiv.innerHTML = message;
