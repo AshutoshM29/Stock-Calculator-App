@@ -12,10 +12,15 @@ function clickHandler() {
     var qty = Number(stockQuantity.value);
     var curr = Number(currentPrice.value);
 
-    if(ip&&qty&&curr) {
+    if(ip > 0 && qty > 0 && curr > 0) {
         calculateProfitAndLoss(ip,qty,curr);
-    } else {
+    } else if(ip<0 || qty<0 || curr<0) {
+        showOutput(`Values can't be negative! 🤦‍♂️`);
+        outputDiv.style.color = "yellow";
+    } 
+    else {
         showOutput(`Please enter all the fields 😠`);
+        outputDiv.style.color = "yellow";
     }
 }
 
